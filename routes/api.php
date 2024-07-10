@@ -22,6 +22,7 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/password/reset/request', [PasswordResetController::class, 'requestPasswordReset']);
 Route::post('/password/reset', [PasswordResetController::class, 'resetPassword'])->name('password.reset');
+Route::get('/test-insert-performance',  [LoginController::class,'testInsertPerformance']);
 
 Route::middleware('auth:api')->group(function () {
     Route::get('/dashboard', [UserController::class, 'index']);
